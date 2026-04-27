@@ -25,7 +25,7 @@ const Navbar = () => {
         <div className="bg-rose-100 text-rose-800 flex items-center text-sm mb-5 border-b border-b-gray-400 justify-between py-4">
           <img
             onClick={() => navigate("/")}
-            className="w-15 rounded-full"
+            className="w-15 cursor-pointer rounded-full"
             src={assets.logo}
             alt=""
           />
@@ -49,7 +49,7 @@ const Navbar = () => {
             </NavLink>
           </ul>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 relative">
             {token && userData ? (
               <div
               onClick={(e) => {
@@ -69,7 +69,7 @@ const Navbar = () => {
                 />
 
 {showMenu && 
-                <div className="absolute ring-0 right-0 top-0 text-base mt-1 font-medium z-20 hidden pt-14 group-hover:block bg-rose-100 ">
+                <div className="absolute right-0 top-0 text-base mt-1 font-medium z-50 pt-14 bg-rose-100 ">
                   <div className="min-w-38 bg-rose-100 rounded flex flex-col text-rose-800 gap-4 p-4">
                     <p className='hover:text-rose-300' onClick={() => navigate("/my-profile")}>My Profile</p>
                     <p className='hover:text-rose-300' onClick={() => navigate("/my-appointment")}>
@@ -93,12 +93,18 @@ const Navbar = () => {
               setShowMenu(false)
               setMobileMenu(true)
               }} className="w-6 md:hidden" src={assets.menu_icon} alt="" />
+
             {/* mobile menu */}
             <div className={`${mobileMenu ? 'fixed w-full h-full' : 'h-0 w-0 overflow-hidden'}md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden bg-rose-100 transition-all`}>
               <div className="flex items-center justify-between px-5 py-6">
                 <img className="w-16 rounded-full" src={assets.logo} alt="" />
-                <img onClick={()=>setMobileMenu(false)} className="w-7" src={assets.cross_icon} alt="" />
+                <img 
+                onClick={() => setMobileMenu(false)}
+                className="w-7" 
+                src={assets.cross_icon} 
+                alt="" />
               </div>
+
               <ul className="flex flex-col items-center gap-2 mt-5 px-5 text-lg font-medium">
                 <NavLink onClick={()=>setMobileMenu(false)} to='/'> <p className='px-4 rounded inline-block'>HOME</p></NavLink>
                 <NavLink onClick={()=>setMobileMenu(false)} to='/artists'><p className='px-4 rounded inline-block'>ALL ARTISTS</p></NavLink>
