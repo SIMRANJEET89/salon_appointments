@@ -34,14 +34,14 @@ const AllArtist = () => {
 
         <div className={`flex flex-col gap-4 text-sm ${showFilter ? 'flex' : 'hidden sm:flex'}`}>
           <p
-            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-rose-800 rounded transition-all cursor-pointer ${speciality === "Hair stylist" ? "bg-rose-200" : ""}`}
+            className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-rose-800 rounded transition-all cursor-pointer ${speciality === "Hair Stylist" ? "bg-rose-200" : ""}`}
             onClick={() =>
-              speciality === "Hair stylist"
+              speciality === "Hair Stylist"
                 ? navigate("/artists")
-                : navigate("/artists/Hair stylist")
+                : navigate("/artists/Hair Stylist")
             }
           >
-            Hair stylist
+            Hair Stylist
           </p>
           <p
             className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-rose-800 rounded transition-all cursor-pointer ${speciality === "Makeup artist" ? "bg-rose-200" : ""}`}
