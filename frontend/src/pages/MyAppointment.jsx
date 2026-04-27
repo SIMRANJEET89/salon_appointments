@@ -176,11 +176,7 @@ const MyAppointment = () => {
                   Cancel appointment
                 </button>
               )}
-              {!item.cancelled && !item.isCompleted &&(
-                <button className="border border-rose-800 text-rose-800 sm:min-w-48 py-2">
-                  Appointment Cancelled
-                </button>
-              )}
+              
 
               {item.cancelled && !item.isCompleted &&(
                 <button className="sm-min-w-48 p-3 border border-rose-800 text-rose-800">
